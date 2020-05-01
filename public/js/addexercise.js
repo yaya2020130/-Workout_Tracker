@@ -18,7 +18,7 @@ $("#add-btn").on("click", function(event) {
    Duration: $("#Duration").val().trim(),
     Distance: $("#Distance").val().trim()
   };
-
+console.log(click)
   // send an AJAX POST-request with jQuery
   $.post("/new", newCharacter)
     // on success, run this callback
