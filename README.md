@@ -1,4 +1,4 @@
-# -Workout_Tracker
+# Workout Tracker
 
 
 ## A fullstack application that allows user to create,ubdate a workout 
@@ -23,7 +23,7 @@ Workout tracker is a full stack app that allows user to do the following thigs m
 
 
 
-![Vote](assets/vote.gif)
+![workout](workout.png)
 
 When you look the page the are two options , "start your workout" or"  new workout" also if you alredy  started a work out it will give an opption which says continue workout.When you create a workout  the app gives two options "cardio "or "resistance".resistance has the following opptions:-
 * Exercise name
@@ -41,10 +41,9 @@ And under cardio you can find the following opptions:-
 Built with [bootstrap](https://getbootstrap.com/).
 
 NPM packages used: 
-* [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
-* [@handlebars/allow-prototype-access](https://www.npmjs.com/package/@handlebars/allow-prototype-access)
+allow-prototype-access)
 * [mangoose](https://www.npmjs.com/package/mangoose)
-* [Node MySQL 2](https://www.npmjs.com/package/mangoose)
+* [Node ]("")
 * [Express](https://www.npmjs.com/package/express)
 
 
