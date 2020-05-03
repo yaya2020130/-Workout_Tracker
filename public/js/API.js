@@ -8,5 +8,10 @@ const API = {
     method: "POST",
     url: '/api/workouts',
     data: {}
-  }).then(data=> data)
+  }).then(data=> data),
+  addExercise: (data,id)=> $.ajax({
+    method: "PUT",
+    url: "/api/workouts/"+id,
+    data
+  }).then(data=>data)
 }

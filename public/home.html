@@ -4,31 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
   <title>Workout Tracker</title>
 </head>
 <body>
-  <!-- Button trigger modal -->
-<button >
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Exercise</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Select Type of Exercise</label>
+            <select class="form-control" id="selectType">
+              <option>Resistance</option>
+              <option>Cardio</option>
+            </select>
+          </div>
+          <span id="resistance" style='display:block'>
+            <div class="form-group">
+            <label for="resistanceName">Exercise Name</label>
+            <input type="text" class="form-control" id="resistanceName" placeholder="Bench Press">
+          </div>
+          <div class="form-group">
+            <label for="resistanceSet">Number of Sets</label>
+            <input type="text" class="form-control" id="resistanceSet" placeholder="5">
+          </div>
+          <div class="form-group">
+            <label for="resistanceRep">Repetitions</label>
+            <input type="text" class="form-control" id="resistanceRep" placeholder="12">
+          </div>
+          <div class="form-group">
+            <label for="resistanceWeight">Weight</label>
+            <input type="text" class="form-control" id="resistanceWeight" placeholder="150lbs">
+          </div>
+          <div class="form-group">
+            <label for="resistanceDuration">Time</label>
+            <input type="text" class="form-control" id="resistanceDuration" placeholder="30"> minutes
+          </div>
+          </span>
+          <span id="cardio" style='display:none'>
+            <div class="form-group">
+            <label for="cardioName">Exercise Name</label>
+            <input type="text" class="form-control" id="cardioName" placeholder="yoga, running, etc...">
+            </div>
+          <div class="form-group">
+            <label for="cardioDuration">Exercise Duration</label>
+            <input type="text" class="form-control" id="cardioDuration" placeholder="30"> minutes
+            </div>
+          </span>
+          
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" id='submitExercise' class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
@@ -36,10 +76,10 @@
   <div class="jumbotron"><h1>Workout Tracker</h1>
   
     <hr>
-    <a href="#" class="btn btn-danger btn-lg">
-      <span class="fa fa-eye"></span> New Workout</a>
-    <a href="#" class="btn btn-danger btn-lg">
-      <span class="fa fa-th-list" type="button" data-toggle="modal" data-target="#exampleModal"></span>Add Exercise</a></div>
+    <a href="#" class="btn btn-danger btn-lg" id='continueWorkout' data-target="#exampleModal" data-toggle="modal">
+      <span id='workoutBtn'>Continue Workout</span></a>
+    <a href="#" class="btn btn-danger btn-lg" id='newWorkout'>
+      <span class="fa fa-th-list" type="button"></span>New Workout</a></div>
 
   <div class="container" style='justify-content: center;'>
     <div class="row" id="exercises">

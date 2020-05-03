@@ -31,9 +31,9 @@ router.put('/workouts/:id', ({body,params},res)=>{
 // router.post('/exercises', ({body},res)=>{
 //   Exercise.create(body).then(data=>res.json(data))
 // })
-// router.put('/exercises/:id', ({body,params},res)=>{
-//   Exercise.findByIdAndUpdate({_id:params.id}, {$push:{exercises: body}}).then(data=>res.json(data))
-// })
+router.put('/workouts/:id', ({body,params},res)=>{
+  Exercise.findByIdAndUpdate({_id:params.id}, {$push:{exercises: body}}).then(data=>res.json(data))
+})
 
 
 
