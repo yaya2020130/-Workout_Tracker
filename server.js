@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -13,11 +13,16 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://<yaya100>:<yaya100>@ds339177.mlab.com:39177/heroku_g19ssmlt", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+// mongoose.connect("mongodb://localhost/workout_db", {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
 
+mongoose.connect( process.env.MONGODB_URI|| "mongodb://<yaya100>:<yaya100>@ds339177.mlab.com:39177/heroku_g19ssmlt", {
+  useNewUrlParser: true,
+  // useFindAndModify: false
+  
+});
 
 
 // routes
