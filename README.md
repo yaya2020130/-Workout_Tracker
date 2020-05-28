@@ -23,7 +23,7 @@ Workout tracker is a full stack app that allows user to do the following thigs m
 
 
 
-![workout](workout.png)
+![workout](workout.gif)
 
 When you look the page the are two options , "start your workout" or"  new workout" also if you alredy  started a work out it will give an opption which says continue workout.When you create a workout  the app gives two options "cardio "or "resistance".resistance has the following opptions:-
 * Exercise name
